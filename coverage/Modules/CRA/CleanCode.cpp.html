@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>CleanCode.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+ï»¿#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+// https://vo.la/kqsHR
+// https://gist.github.com/mincoding-jh/413460a4ee8acca490d4249e59237c52
+// ì¸í°íì´ì¤, í¨ì ìê·¸ëì³ (ì´ë¦, íë¼ë¯¸í° ë¤)
+void bbq(int val1, int val2)
+<span style = "background-color:#fdd">{
+	cout &lt;&lt; "bbq1" &lt;&lt; endl;
+}</span>
+
+// í¨ì ì¤ë²ë¡ë©
+void bbq(char a, char b)
+<span style = "background-color:#fdd">{
+	cout &lt;&lt; "bbq2" &lt;&lt; endl;
+}</span>
+
+int getSum(int a2, int b2);
+
+int getSum(int a45, int b2)
+<span style = "background-color:#fdd">{
+	return a45 + b2;
+}</span>
+
+int main2()
+<span style = "background-color:#fdd">{
+	int a2 = 1;
+	int b2 = 2;
+	int d = getSum(a2, b2);</span>
+
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 10; ++i)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "HI";
+	}</span>
+
+	// Ctrl + Shift + R : refactor this
+
+	// Alt + Enter : QuickFix (ìëì¼ë¡ include ì¶ì², for eachë¬¸ì¼ë¡ ë°ê¾¸ê¸° ë±)
+	// Ctrl + Space : ìëìì± (ìëì¼ë¡ include ê²½ë¡ ì¶ì²)
+
+	// ctrl + R + R : rename
+	// ctrl + alt + enter : reformat code (ìë ë¤ì¬ì°ê¸°)
+	// ctrl + alt + shift + up/down : ì½ë ì´ëìí¤ê¸°
+
+	// ctrl + D : íì¤ copy
+	// alt ëë¥´ê³  ì¤ ëëê·¸ : ì¬ë¬ì¤ ëì ì»¤ì
+	// alt + shift ëë¥´ê³  ì¤ ëëê·¸ : íë²ì ë°ê¾¸ê¸°
+	// ctrl + shift + enter : ì½ëìëìì±
+
+<span style = "background-color:#fdd">	int a = 0;</span>
+
+<span style = "background-color:#fdd">	cout &lt;&lt; "hello world";</span>
+	//cin &gt;&gt; a;
+<span style = "background-color:#fdd">	cout &lt;&lt; a;</span>
+
+<span style = "background-color:#fdd">	if (a &gt; 3)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "hi" &lt;&lt; endl;
+	}
+	else if (a &gt; 1)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "hello" &lt;&lt; endl;</span>
+	}
+	else
+	{
+		// do nothing
+	}
+
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 10; i++)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; i &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+	// ì ì  ë°°ì´ (ì¤í)
+<span style = "background-color:#fdd">	int arr[10] = { 0, };</span>
+
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 10; i++)</span>
+	{
+<span style = "background-color:#fdd">		arr[i] = i;
+	}
+	for (int i = 0; i &lt; 10; i++)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; arr[i] &lt;&lt; " ";
+	}</span>
+
+<span style = "background-color:#fdd">	cout &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (const int val : arr) // valì ìì  ë¶ê°</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (int val : arr) // valì ìë³¸ arrì ìí¥ìì</span>
+	{
+<span style = "background-color:#fdd">		val = 10;
+		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (int val : arr) // ìë³¸ arrê·¸ëë¡ ì¶ë ¥</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (int&amp; val : arr) // valì ìí´ ìë³¸ ê° ë°ë</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+		val = 10;
+	}</span>
+
+<span style = "background-color:#fdd">	cout &lt;&lt; endl;
+	for (int&amp; val : arr)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+	// ëì ë°°ì´ (í)
+<span style = "background-color:#fdd">	vector&lt;int&gt; vA; // ìëì´ê¸°í</span>
+
+<span style = "background-color:#fdd">	vA.push_back(3);
+	vA.push_back(2);
+	vA.push_back(1);</span>
+
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 20; i++)</span>
+	{
+<span style = "background-color:#fdd">		vA.push_back(i); // ë©ëª¨ë¦¬ ëë¦¼
+	}
+	cout &lt;&lt; vA.size() &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (const int val : vA)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;</span>
+
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 20; i++)</span>
+	{
+<span style = "background-color:#fdd">		vA.pop_back(); // ë©ëª¨ë¦¬ ê°ììí´
+	}
+	cout &lt;&lt; vA.size() &lt;&lt; endl;</span>
+
+
+	int* rArr;
+
+<span style = "background-color:#fdd">	rArr = (int*)malloc(sizeof(int) * 10);
+	free(rArr);</span>
+
+	// í¨ì í¸ì¶
+<span style = "background-color:#fdd">	bbq(2, 3);
+	bbq('a', 'b');</span>
+
+	// ìë ëê°ë ëì¼
+<span style = "background-color:#fdd">	int const INF = 123;
+	const int INF2 = 123;</span>
+
+	// INF = 3; // ìì  ë¶ê°
+	// INF2 = 3; // ìì ë¶ê°
+
+<span style = "background-color:#fdd">	int aa = 10;
+	int bb = 20;
+	int* const ptr = &amp;aa; // int *ì ëí´ constê° ë¶ì</span>
+	// ptr = &amp;bb; // ì£¼ìê° ë³ê²½ ë¶ê°
+
+<span style = "background-color:#fdd">	int const * pptr = &amp;bb; // intì ëí´ constê° ë¶ì</span>
+	//*pptr = 100; // ì­ì°¸ì¡° ê° ë³ê²½ ë¶ê°
+
+<span style = "background-color:#fdd">	return 0;
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

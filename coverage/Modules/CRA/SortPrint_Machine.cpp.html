@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>SortPrint_Machine.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+
+void print(vector&lt;int&gt;&amp; arr);
+
+class ISortAlgorithm
+{
+public:
+	virtual void RunSort(vector&lt;int&gt;&amp; arr) = 0;
+};
+
+class BubbleSortAlgorithm : public ISortAlgorithm
+{
+public :
+	virtual void RunSort(vector&lt;int&gt;&amp; arr) override;
+};
+
+class SelectionSortAlgorithm : public ISortAlgorithm
+{
+public:
+	virtual void RunSort(vector&lt;int&gt;&amp; arr) override;
+};
+
+class SortMachine
+{
+public:
+	typedef enum
+	{
+		eSORT_ALGO_BUBBLE,
+		eSORT_ALGO_SELECTION,
+	} SORT_ALGO;
+	void insert(int val)
+<span style = "background-color:#fdd">	{
+		arr.push_back(val);
+	}</span>
+	void selection(SORT_ALGO eSort);// ÆÄ¶ó¹ÌÅÍ´Â ÀÚÀ¯
+	void run(); // ³»°¡ ¼±ÅÃÇÑ ¾Ë°í¸®ÁòÀÌ µ¿ÀÛ
+	void show()
+<span style = "background-color:#fdd">	{
+		print(arr);
+	}</span>
+	~SortMachine()
+<span style = "background-color:#fdd">	{
+		delete sortAlgorithm;
+	}
+	SortMachine()</span>
+	{
+<span style = "background-color:#fdd">		sortAlgorithm = createAlgo(eSORT_ALGO_BUBBLE);
+	}</span>
+
+private:
+	vector&lt;int&gt; arr;
+<span style = "background-color:#fdd">	ISortAlgorithm * sortAlgorithm = nullptr;</span>
+
+	// °¡»ó »ý¼ºÀÚ
+	ISortAlgorithm * createAlgo(SORT_ALGO eSort)
+<span style = "background-color:#fdd">	{
+		ISortAlgorithm* algo = nullptr;</span>
+
+<span style = "background-color:#fdd">		if (eSort == eSORT_ALGO_BUBBLE)</span>
+		{
+<span style = "background-color:#fdd">			algo = new BubbleSortAlgorithm();
+		}
+		else if (eSort == eSORT_ALGO_SELECTION)</span>
+		{
+<span style = "background-color:#fdd">			algo = new SelectionSortAlgorithm();</span>
+		}
+
+<span style = "background-color:#fdd">		return algo;
+	}</span>
+};
+
+
+void SortMachine::run()
+<span style = "background-color:#fdd">{
+	if (this-&gt;sortAlgorithm != nullptr)</span>
+	{
+<span style = "background-color:#fdd">		this-&gt;sortAlgorithm-&gt;RunSort(this-&gt;arr);</span>
+	}
+<span style = "background-color:#fdd">}</span>
+
+void SortMachine::selection(SORT_ALGO eSort)
+<span style = "background-color:#fdd">{
+	if (this-&gt;sortAlgorithm != nullptr)</span>
+	{
+<span style = "background-color:#fdd">		delete this-&gt;sortAlgorithm;
+		this-&gt;sortAlgorithm = nullptr;</span>
+	}
+
+<span style = "background-color:#fdd">	this-&gt;sortAlgorithm = createAlgo(eSort);
+}</span>
+
+void bubbleSort(vector&lt;int&gt;&amp; arr)
+<span style = "background-color:#fdd">{
+	for (unsigned int a = 0; a &lt; arr.size(); a++)</span>
+	{
+<span style = "background-color:#fdd">		for (unsigned int b = 0; b &lt; arr.size() - 1 - a; b++)</span>
+		{
+<span style = "background-color:#fdd">			if (arr[b] &gt; arr[b + 1])</span>
+			{
+<span style = "background-color:#fdd">				std::swap(arr[b], arr[b + 1]);</span>
+			}
+<span style = "background-color:#fdd">		}
+	}
+}</span>
+void seletionSort(vector&lt;int&gt;&amp; arr)
+<span style = "background-color:#fdd">{
+	for (unsigned int a = 0; a &lt; arr.size(); a++)</span>
+	{
+<span style = "background-color:#fdd">		for (unsigned int b = a + 1; b &lt; arr.size(); b++)</span>
+		{
+<span style = "background-color:#fdd">			if (arr[a] &gt; arr[b])</span>
+			{
+<span style = "background-color:#fdd">				std::swap(arr[a], arr[b]);</span>
+			}
+<span style = "background-color:#fdd">		}
+	}
+}</span>
+
+void print(vector&lt;int&gt;&amp; arr)
+<span style = "background-color:#fdd">{
+	for (const int&amp; val : arr)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; val &lt;&lt; " ";
+	}
+	cout &lt;&lt; endl;
+}</span>
+
+void BubbleSortAlgorithm::RunSort(vector&lt;int&gt;&amp; arr)
+<span style = "background-color:#fdd">{
+	bubbleSort(arr);
+}</span>
+
+void SelectionSortAlgorithm::RunSort(vector&lt;int&gt;&amp; arr)
+<span style = "background-color:#fdd">{
+	seletionSort(arr);
+}</span>
+
+int main22()
+<span style = "background-color:#fdd">{
+	vector&lt;int&gt; arr;
+	arr.push_back(3);
+	arr.push_back(7);
+	arr.push_back(1);
+	arr.push_back(5);
+	arr.push_back(2);</span>
+
+	//bubbleSort(arr);
+<span style = "background-color:#fdd">	seletionSort(arr);
+	print(arr);</span>
+
+<span style = "background-color:#fdd">	SortMachine* sMachine = new SortMachine();</span>
+
+<span style = "background-color:#fdd">	sMachine-&gt;selection(SortMachine::eSORT_ALGO_BUBBLE);
+	sMachine-&gt;insert(3);
+	sMachine-&gt;insert(7);
+	sMachine-&gt;insert(9);
+	sMachine-&gt;insert(5);
+	sMachine-&gt;insert(2);
+	sMachine-&gt;run();
+	sMachine-&gt;show();</span>
+
+<span style = "background-color:#fdd">	sMachine-&gt;selection(SortMachine::eSORT_ALGO_SELECTION);
+	sMachine-&gt;insert(1);
+	sMachine-&gt;run();
+	sMachine-&gt;show();</span>
+
+<span style = "background-color:#fdd">	delete sMachine;</span>
+
+<span style = "background-color:#fdd">	return 0;
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

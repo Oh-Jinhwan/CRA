@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\CleanCode">
+      <UniqueIdentifier>{e4a3007f-5a40-4f6a-ac63-f425d2f402a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Refactoring">
+      <UniqueIdentifier>{2655e968-a7c0-4c7d-94f7-47bdee33dca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\SOLID">
+      <UniqueIdentifier>{ef45f2d8-1449-41c8-8edc-1e8d48b70bf6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BumperCar.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Cal.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="CleanCode.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="CleanComment.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawMachine.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Formatting.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMachine.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Hotel.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="ISocket.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Phone.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Sign.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SortPrint_Machine.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Zergling.cpp">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClCompile>
+    <ClCompile Include="refac334.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="sumChecker.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="sumChckerAnswer.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="ALU.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>소스 파일\Refactoring</Filter>
+    </ClCompile>
+    <ClCompile Include="SOLID.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="OCP_Vehicle.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="LSP_Vehicle.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_CAR.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="SRP_Board.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="LSP_Car.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_Drone.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="OCP_EventHandler.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="OCP_Greater.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="IPS_Penguin.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="LSP_Plane.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="SRP_Vehicle.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_Vehicle.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_Eagle.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_Bird.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="ISP_Switches.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="DIP_Pilot.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+    <ClCompile Include="DIP_RacingCar.cpp">
+      <Filter>소스 파일\SOLID</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cal.h">
+      <Filter>소스 파일\CleanCode</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

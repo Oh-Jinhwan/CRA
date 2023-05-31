@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>test.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#include "pch.h"
+#include "../CRA/cal.cpp"
+#include "../CRA/sumChecker.cpp"
+#include "../CRA/ALU.cpp";
+#include "../CRA/result.cpp";
+using namespace std;
+
+// cppÆÄÀÏ includeÇÒ °Í
+// Ctrl + Space : ÀÚµ¿¿Ï¼º(ÀÚµ¿À¸·Î include °æ·Î ÃßÃµ)
+// main ÇÔ¼ö´Â µû·Î cpp·Î »©¾ßÇÔ
+
+// 1) Å×½ºÆ® -&gt; Å×½ºÆ® Å½»ö±â (´À¸²)
+// : UnitTest ÇÁ·ÎÁ§Æ® ¿ìÅ¬¸¯ÇØ¼­ ½ÃÀÛÇÁ·ÎÁ§Æ®·Î ¼³Á¤ÇÏ¸é runÇÏ¸é ÄÜ¼ÖÃ¢ ¶ä
+// 2) Google Test ÄÜ¼Ö (¾öÃ»ºü¸§, CLIÈ¯°æ)
+// 3) ¸®»þÆÛ TestÅ½»ö±â : Å×½ºÆ® ¿À¸¥ÂÊ¿¡ µ¿±×¶ó¹Ì Å¬¸¯ -&gt; run
+// : ´ÜÃàÅ° ÁöÁ¤ÇÏ·Á¸é µµ±¸-&gt;¿É¼Ç-&gt;È¯°æ-&gt;Å°º¸µå-&gt;unittestrunsolution °Ë»ö ÈÄ ÇÒ´ç
+//   ÀÏ´Ü ¿©±â¼­´Â shift + f10À¸·Î ÇÒ´çÇÔ
+<span style = "background-color:#dfd">TEST(TestCaseName, TestName) {
+  EXPECT_EQ(1, 1);
+  EXPECT_TRUE(true);
+}</span>
+
+<span style = "background-color:#dfd">TEST(TestCaseName, TestName2)
+{</span>
+	// ÁØºñ(»ý¼º) Arrange
+
+	// ½ÇÇà Act
+
+	// Å×½ºÆ® Assert
+<span style = "background-color:#dfd">}</span>
+
+<span style = "background-color:#dfd">TEST(RefactoringTest, SumCheckerTest)
+{
+	EXPECT_EQ("PASS", SumChecker().GetResult("25+61=86"));
+}</span>
+
+<span style = "background-color:#dfd">TEST(RefactoringTest, SumCheckerTest2)
+{
+	EXPECT_EQ("ERROR", SumChecker().GetResult("5++5=10"));
+}</span>
+
+<span style = "background-color:#dfd">TEST(RefactoringTest, SumCheckerTest3)
+{
+	EXPECT_EQ("FAIL", SumChecker().GetResult("10000+1=10002"));
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, ADDTest1) {
+	ALU alu;
+	alu.setOperand1(10);
+	alu.setOperand2(20);
+	alu.setOPCODE("ADD");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(30, ret.getResult());
+	EXPECT_EQ(0, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, ADDTest2) {
+	ALU alu;
+	alu.setOperand1(10);
+	alu.setOPCODE("ADD");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(2, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, ADDTest3) {
+	ALU alu;
+	alu.setOperand2(20);
+	alu.setOPCODE("ADD");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(1, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, MULTest1) {
+	ALU alu;
+	alu.setOperand1(10);
+	alu.setOperand2(20);
+	alu.setOPCODE("MUL");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(200, ret.getResult());
+	EXPECT_EQ(0, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, MULTest2) {
+	ALU alu;
+	alu.setOperand1(10);
+	alu.setOPCODE("MUL");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(2, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, MULTest3) {
+	ALU alu;
+	alu.setOperand2(20);
+	alu.setOPCODE("MUL");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(1, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, SUBTest1) {
+	ALU alu;
+	alu.setOperand1(20);
+	alu.setOperand2(10);
+	alu.setOPCODE("SUB");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(10, ret.getResult());
+	EXPECT_EQ(0, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, SUBTest2) {
+	ALU alu;
+	alu.setOperand1(20);
+	alu.setOPCODE("SUB");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(2, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, SUBTest3) {
+	ALU alu;
+	alu.setOperand2(10);
+	alu.setOPCODE("SUB");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(1, ret.getStatus());
+}</span>
+
+<span style = "background-color:#dfd">TEST(ALU, InvalidOpCode) {
+	ALU alu;
+	alu.setOperand1(10);
+	alu.setOperand2(20);
+	alu.setOPCODE("DIV");</span>
+
+<span style = "background-color:#dfd">	Result ret;
+	alu.enableSignal(&amp;ret);</span>
+
+<span style = "background-color:#dfd">	EXPECT_EQ(65535, ret.getResult());
+	EXPECT_EQ(3, ret.getStatus());
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>
