@@ -1,7 +1,7 @@
 // IPS(Interface Segregation Principle)
 #include <string>
 #include <exception>
-#include "IPS_Bird.cpp";
+#include "ISP_Bird.cpp";
 using namespace std;
 
 class Penguin : public Bird {
